@@ -8,23 +8,26 @@ class CustomButton extends StatelessWidget {
   final bool isLoading ;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 55,
-        decoration: BoxDecoration(
-          color: kPrimaryColor,
-          borderRadius: BorderRadius.circular(10)
-        ),
-        child: Center(
-          child: isLoading ? const CircularProgressIndicator(
-            color: Colors.black,
-          ) : const Text("Add",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 55,
+          decoration: BoxDecoration(
+            color: kPrimaryColor,
+            borderRadius: BorderRadius.circular(10)
           ),
+          child: Center(
+            child: isLoading ? const CircularProgressIndicator(
+              color: Colors.black,
+            ) : const Text("Add",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+            ),
+            ),
           ),
         ),
       ),
